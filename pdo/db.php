@@ -14,10 +14,9 @@ $options = [
 try 
 {
      $pdo = new PDO($dsn, $user, $pass, $options);
-     echo "Connectie gemaakt!";
 } 
-catch (\PDOException $e) 
+catch (PDOException $e) 
 {
-     throw new \PDOException($e->getMessage(), (int)$e->getCode());
+     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
 ?>
