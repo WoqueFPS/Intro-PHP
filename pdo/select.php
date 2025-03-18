@@ -29,19 +29,17 @@ try {
                 <th>Action</th>
             </tr>
         </thead>
-        <tbody>
-            <?php foreach ($producten as $product): ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($product['product_code']); ?></td>
-                    <td><?php echo htmlspecialchars($product['product_naam']); ?></td>
-                    <td><?php echo htmlspecialchars($product['prijs_per_stuk']); ?></td>
-                    <td><?php echo htmlspecialchars($product['omschrijving']); ?></td>
-                    <td>
-                        <a href="">Edit</a>
-                        <a href="">Delete</a></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
+        <?php 
+            foreach ($producten as $product) { 
+            echo "<tr>";
+            echo "<td>" . $product['product_code'] . "</td>";
+            echo "<td>" . $product['product_naam'] . "</td>";
+            echo "<td>" . $product['prijs_per_stuk'] . "</td>";
+            echo "<td>" . $product['omschrijving'] . "</td>";
+            echo "<td> <a href='update.php?product_code=".$product['product_code']."'>Edit</a> </td>";
+            echo "</tr>";
+            } 
+        ?>
     </table>
 </body>
 </html>
